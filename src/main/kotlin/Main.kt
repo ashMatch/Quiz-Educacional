@@ -74,10 +74,13 @@ fun teacherSignUp(teachers:MutableList<Teacher>, t:Teacher){
             println("Um usuário com esse email já existe")
             break
         }
-        teachers.add(t)
-        print("Usuario adcionado com Sucesso!!")
-        println(t)
     }
+    teachers.add(t)
+    println("Usuario adcionado com Sucesso!!")
+    teachers.forEach{ it -> println("""
+        nome: ${it.name}
+        email: ${it.email}
+        senha: ${it.password}""".trimIndent()+"\n\n")}
 }
 
 fun StudentLogin(student:MutableList<String>){
